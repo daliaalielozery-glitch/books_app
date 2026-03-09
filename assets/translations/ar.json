@@ -1,0 +1,21 @@
+{
+  "welcome": "مرحبا",
+  "orderNow" : "اطلب كتابك الآن!",
+  "login": "تسجيل الدخول",
+  "register": "إنشاء حساب",
+  "registertxt" :"مرحباً! سجل الآن للبدء",
+  "logintxt" :"أهلاً بعودتك! سعدنا برؤيتك مجدداً!",
+  "username": "اسم المستخدم",
+  "email": "البريد الإلكتروني",
+  "password": "كلمة المرور",
+  "confirm_password": "تأكيد كلمة المرور",
+  "already_have_account": "هل لديك حساب بالفعل؟",
+  "login_now": "تسجيل الدخول الآن",
+  "dont_have_account": "ليس لديك حساب؟",
+  "register_now": "إنشاء حساب الآن",
+  "enter_email": "أدخل بريدك الإلكتروني",
+  "enter_password": "أدخل كلمة المرور",
+  "sign_in_with_google": "تسجيل الدخول باستخدام جوجل",
+  "sign_in_with_apple": "تسجيل الدخول باستخدام أبل",
+  "or" : "أو"
+}

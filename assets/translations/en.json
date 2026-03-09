@@ -1,0 +1,21 @@
+{
+  "welcome": "Welcome",
+  "orderNow" : "Order Your Book Now!",
+  "login" : "LogIn",
+  "register" : "Register",
+  "registertxt" :"Hello! Register to get star",
+  "logintxt" :"Welcome back! Glad to see you, Again!",
+  "username": "Username",
+  "email": "Email",
+  "password": "Password",
+  "confirm_password": "Confirm Password",
+  "already_have_account": "Already have an account?",
+  "login_now": "Login Now",
+  "dont_have_account": "Don’t have an account?",
+  "register_now" : "Register Now",
+  "enter_email": "Enter your email",
+  "enter_password": "Enter your password",
+  "sign_in_with_google": "Sign in with Google",
+  "sign_in_with_apple": "Sign in with Apple",
+  "or" : "or"
+}
