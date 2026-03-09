@@ -79,7 +79,7 @@ class LoginScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 14.sp),
               ),
             ),
-            Row(
+            Row(mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(child: Divider(thickness: 2.h)),
                 Expanded(child: Text("or".tr()),),
