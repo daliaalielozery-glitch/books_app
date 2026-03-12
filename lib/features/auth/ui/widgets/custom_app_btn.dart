@@ -12,7 +12,7 @@ class CustomAppBtn extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.r)),
       child: Row(mainAxisAlignment: MainAxisAlignment.center,
-        children: [image,
+        children: [image,SizedBox(width: 9.w),
           Text(text,textAlign: TextAlign.center,
             style: TextStyle(fontSize: 15.sp, color: Color(0xff6A707C)),),
         ],

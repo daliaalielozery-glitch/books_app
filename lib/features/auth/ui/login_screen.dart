@@ -6,7 +6,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/app_btn.dart';
-import '../../../../core/theme/app_text_field.dart';
+import '../../../core/app_text_field.dart';
 import '../../../../gen/translations/local_keys.g.dart';
 import '../../../core/arrow_back.dart';
 import '../../../core/theme/app_colors.dart';
@@ -36,13 +36,14 @@ class LoginScreen extends StatelessWidget {
 
             SizedBox(height: 40.h),
 
-            AppTextField(hintText: LocaleKeys.email.tr(), icon: Icons.email),
+            AppTextField(hintText: LocaleKeys.email.tr(),keyboardType: TextInputType.emailAddress,
+                ),
 
             SizedBox(height: 16.h),
 
             AppTextField(
-              hintText: LocaleKeys.password.tr(),
-              icon: Icons.lock,
+              hintText: LocaleKeys.password.tr(),keyboardType: TextInputType.visiblePassword,
+
               isPassword: true,
             ),
 
@@ -82,7 +83,7 @@ class LoginScreen extends StatelessWidget {
             Row(mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(child: Divider(thickness: 2.h)),
-                Expanded(child: Text("or".tr()),),
+                Expanded(child: SizedBox(width: 108.w, child: Text("or".tr())),),
                 Expanded(child: Divider(thickness: 2.h)),
               ],
             ),
@@ -94,3 +95,4 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
+//todo iwant to put the safe area

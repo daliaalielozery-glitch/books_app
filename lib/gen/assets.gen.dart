@@ -17,6 +17,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/apple.png
   AssetGenImage get apple => const AssetGenImage('assets/images/apple.png');
 
+  /// File path: assets/images/eye_icon.svg
+  String get eyeIcon => 'assets/images/eye_icon.svg';
+
   /// File path: assets/images/google.png
   AssetGenImage get google => const AssetGenImage('assets/images/google.png');
 
@@ -32,8 +35,9 @@ class $AssetsImagesGen {
       const AssetGenImage('assets/images/welcome_background.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [
+  List<dynamic> get values => [
     apple,
+    eyeIcon,
     google,
     splash,
     splashandroid12,

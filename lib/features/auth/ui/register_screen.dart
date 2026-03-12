@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/app_btn.dart';
 import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_text_field.dart';
+import '../../../core/app_text_field.dart';
 import '../../../../gen/translations/local_keys.g.dart';
 import '../../../core/arrow_back.dart';
 import 'login_screen.dart';
@@ -25,69 +25,67 @@ class RegisterScreen extends StatelessWidget {
 
             Text(
               LocaleKeys.registertxt.tr(),
-              style: TextStyle(
-                fontSize: 24.sp,
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.bold),
             ),
 
             SizedBox(height: 40.h),
 
-             AppTextField(
-              hintText: LocaleKeys.username.tr(),
-              icon: Icons.person,
-            ),
+            AppTextField(hintText: LocaleKeys.username.tr(),),
+
+            SizedBox(height: 16.h),
+
+            AppTextField(hintText: LocaleKeys.email.tr(),keyboardType: TextInputType.emailAddress),
+
+            SizedBox(height: 16.h),
+
+            AppTextField(hintText: LocaleKeys.password.tr(),keyboardType: TextInputType.visiblePassword, isPassword: true),
 
             SizedBox(height: 16.h),
 
             AppTextField(
-              hintText: LocaleKeys.email.tr(),
-              icon: Icons.email,
-            ),
-
-            SizedBox(height: 16.h),
-
-             AppTextField(
-              hintText: LocaleKeys.password.tr(),
-              icon: Icons.lock,
-              isPassword: true,
-            ),
-
-            SizedBox(height: 16.h),
-
-             AppTextField(
               hintText: LocaleKeys.confirm_password.tr(),
-              icon: Icons.lock,
+
               isPassword: true,
             ),
 
             SizedBox(height: 30.h),
 
-            AppBtn(text: LocaleKeys.register.tr(),),
+            AppBtn(text: LocaleKeys.register.tr()),
 
             SizedBox(height: 20.h),
 
             Center(
-              child:  Text.rich(TextSpan(text:LocaleKeys.already_have_account.tr(),
-                  children: [TextSpan(text:LocaleKeys.login_now.tr(),style:
-              TextStyle(fontWeight: FontWeight.bold,color: AppColors.primaryColor),recognizer: TapGestureRecognizer()
-                    ..onTap = () {
-
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => LoginScreen(),
-                        ),
-                      );
-                    },)]),
+              child: Text.rich(
+                TextSpan(
+                  text: LocaleKeys.already_have_account.tr(),
+                  children: [
+                    TextSpan(
+                      text: LocaleKeys.login_now.tr(),
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.primaryColor,
+                      ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LoginScreen(),
+                            ),
+                          );
+                        },
+                    ),
+                  ],
+                ),
 
                 style: TextStyle(fontSize: 14.sp),
               ),
-
-            )
+            ),
           ],
         ),
       ),
     );
   }
 }
+
+//todo iwant to put the safe area

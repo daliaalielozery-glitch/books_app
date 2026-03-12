@@ -66,4 +66,5 @@ class WelcomeScreen extends StatelessWidget {
     );
   }
 }
+// todo iwant to put the safe area
 // dart run easy_localization:generate -S assets/translations -O lib/gen/translations -o locale_keys.g.dart -f keys
