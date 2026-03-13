@@ -42,18 +42,24 @@ class _AppTextFieldState extends State<AppTextField> {
         ),
         hintText: widget.hintText,
         hintStyle: AppTextStyle().hintstyle,
-        suffixIcon: Padding(
+        suffixIcon: widget.isPassword
+            ? Padding(
           padding: EdgeInsetsGeometry.all(8.0.r),
           child: InkWell(
-            onTap: () { setState(() {
-              isObscuer=!isObscuer;
-            });},
-            child:isObscuer? Padding(
+            onTap: () {
+              setState(() {
+                isObscuer = !isObscuer;
+              });
+            },
+            child: isObscuer
+                ? Padding(
               padding: const EdgeInsets.all(8.0),
-              child: SvgPicture.asset(Assets.images.eyeIcon),
-            ):Icon(Icons.visibility_off),
+              child:const Icon(Icons.visibility_off) ,
+            )
+                :SvgPicture.asset(Assets.images.eyeIcon) ,
           ),
-        ),
+        )
+            : null,
         filled: true,
         fillColor: AppColors.greyColor,
         border: OutlineInputBorder(

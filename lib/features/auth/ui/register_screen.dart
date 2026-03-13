@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -9,9 +10,26 @@ import '../../../../gen/translations/local_keys.g.dart';
 import '../../../core/arrow_back.dart';
 import 'login_screen.dart';
 
-class RegisterScreen extends StatelessWidget {
+class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
 
+  @override
+  State<RegisterScreen> createState() => _RegisterScreenState();
+}
+
+class _RegisterScreenState extends State<RegisterScreen> {
+  var enteremailController= TextEditingController();
+  var enterpasswordController =TextEditingController();
+  var confirmPasswordController =TextEditingController();
+  var userNameController =TextEditingController();
+  @override
+  void dispose() {
+enterpasswordController.dispose();
+enterpasswordController.dispose();
+userNameController.dispose();
+confirmPasswordController.dispose();
+super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,19 +48,22 @@ class RegisterScreen extends StatelessWidget {
 
             SizedBox(height: 40.h),
 
-            AppTextField(hintText: LocaleKeys.username.tr(),),
+            AppTextField(controller: userNameController,
+              hintText: LocaleKeys.username.tr(),),
 
             SizedBox(height: 16.h),
 
-            AppTextField(hintText: LocaleKeys.email.tr(),keyboardType: TextInputType.emailAddress),
+            AppTextField(controller: enteremailController,
+                hintText: LocaleKeys.email.tr(),keyboardType: TextInputType.emailAddress),
 
             SizedBox(height: 16.h),
 
-            AppTextField(hintText: LocaleKeys.password.tr(),keyboardType: TextInputType.visiblePassword, isPassword: true),
+            AppTextField(controller: enterpasswordController,
+                hintText: LocaleKeys.password.tr(),keyboardType: TextInputType.visiblePassword, isPassword: true),
 
             SizedBox(height: 16.h),
 
-            AppTextField(
+            AppTextField(controller: confirmPasswordController,
               hintText: LocaleKeys.confirm_password.tr(),
 
               isPassword: true,
@@ -50,7 +71,10 @@ class RegisterScreen extends StatelessWidget {
 
             SizedBox(height: 30.h),
 
-            AppBtn(text: LocaleKeys.register.tr()),
+            AppBtn(
+                text: LocaleKeys.register.tr(),onTap: ()async{
+              await register()
+              ;}),
 
             SizedBox(height: 20.h),
 
@@ -86,6 +110,24 @@ class RegisterScreen extends StatelessWidget {
       ),
     );
   }
+  register() async {
+    Dio dio = Dio();
+    try {
+      final response = await dio.post(
+        "https://codingarabic.online/api/register",
+        data: {
+          "name": userNameController.text, // ضيفي .text
+          "email": enteremailController.text,
+          "password": enterpasswordController.text,
+          "password_confirmation": confirmPasswordController.text // ضيفي .text
+        },
+      );
+      debugPrint(response.data["data"]["user"]["name"]);
+    } catch (e) {
+      debugPrint("Error: ${e.toString()}");
+    }
+  }
+
 }
 
 //todo iwant to put the safe area
