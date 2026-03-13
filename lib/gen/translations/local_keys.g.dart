@@ -21,5 +21,22 @@ abstract class  LocaleKeys {
   static const enter_password = 'enter_password';
   static const sign_in_with_google = 'sign_in_with_google';
   static const sign_in_with_apple = 'sign_in_with_apple';
+  static const or = 'or';
+  static const forgot_password = 'forgot_password';
+  static const forgot_password_message = 'forgot_password_message';
+  static const send_code = 'send_code';
+  static const remember_password = 'remember_password';
+  static const otp_verification = 'otp_verification';
+  static const otp_message = 'otp_message';
+  static const verify = 'verify';
+  static const didnt_receive_code = 'didnt_receive_code';
+  static const resend = 'resend';
+  static const create_new_password = 'create_new_password';
+  static const new_password_message = 'new_password_message';
+  static const new_password = 'new_password';
+  static const reset_password = 'reset_password';
+  static const password_changed_title = 'password_changed_title';
+  static const password_changed_message = 'password_changed_message';
+  static const back_to_login = 'back_to_login';
 
 }

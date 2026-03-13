@@ -1,3 +1,4 @@
+import 'package:books_app/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class ArrowBack extends StatelessWidget {
@@ -13,16 +14,18 @@ class ArrowBack extends StatelessWidget {
           onTap: onTap,
           child: Container(
             padding: const EdgeInsets.all(8), // space between icon and border
-            decoration: BoxDecoration(
-              border: Border.all(
+            decoration: BoxDecoration(color: AppColors.whitetxt,
+              border: Border.all(color: AppColors.borderColor
                 // border thickness
               ),
-              borderRadius: BorderRadius.circular(8), // optional rounded corners
+              borderRadius: BorderRadius.circular(12), // optional rounded corners
             ),
-            child: const Icon(
-              Icons.arrow_back_ios,
-              color: Colors.black, // icon color
-              // icon size
+            child: Align(alignment: Alignment.center,
+              child: const Icon(
+                Icons.arrow_back_ios,
+                color: Colors.black, // icon color
+                // icon size
+              ),
             ),
           ),
         ),
