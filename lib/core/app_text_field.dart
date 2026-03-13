@@ -10,11 +10,12 @@ class AppTextField extends StatefulWidget {
   final String hintText;
   final bool isPassword;
   final TextInputType? keyboardType;
+  final TextEditingController? controller;
   const AppTextField({
     super.key,
     required this.hintText,
     this.isPassword = false,
-    this.keyboardType,
+    this.keyboardType, this.controller,
   });
 
   @override
@@ -25,7 +26,7 @@ class _AppTextFieldState extends State<AppTextField> {
   bool isObscuer=true;
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
+    return TextFormField(controller: widget.controller,
       cursorColor: AppColors.primaryColor,
       onTapOutside: (v) {
         FocusScope.of(context).unfocus();
@@ -47,7 +48,10 @@ class _AppTextFieldState extends State<AppTextField> {
             onTap: () { setState(() {
               isObscuer=!isObscuer;
             });},
-            child:isObscuer? SvgPicture.asset(Assets.images.eyeIcon):Icon(Icons.visibility_off),
+            child:isObscuer? Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SvgPicture.asset(Assets.images.eyeIcon),
+            ):Icon(Icons.visibility_off),
           ),
         ),
         filled: true,

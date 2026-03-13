@@ -1,6 +1,7 @@
 
 import 'package:books_app/features/auth/ui/register_screen.dart';
 import 'package:books_app/features/auth/ui/widgets/custom_app_btn.dart';
+import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -11,8 +12,22 @@ import '../../../../gen/translations/local_keys.g.dart';
 import '../../../core/arrow_back.dart';
 import '../../../core/theme/app_colors.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  var emailController= TextEditingController();
+  var passwordController =TextEditingController();
+  @override
+  void dispose() {
+emailController.dispose();
+passwordController.dispose();
+super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,20 +51,26 @@ class LoginScreen extends StatelessWidget {
 
             SizedBox(height: 40.h),
 
-            AppTextField(hintText: LocaleKeys.email.tr(),keyboardType: TextInputType.emailAddress,
+            AppTextField( controller: emailController
+              ,hintText: LocaleKeys.email.tr(),
+              keyboardType: TextInputType.emailAddress,
                 ),
 
             SizedBox(height: 16.h),
 
-            AppTextField(
-              hintText: LocaleKeys.password.tr(),keyboardType: TextInputType.visiblePassword,
+            AppTextField(controller: passwordController,
+              hintText: LocaleKeys.password.tr(),
+              keyboardType: TextInputType.visiblePassword,
 
               isPassword: true,
             ),
 
             SizedBox(height: 30.h),
 
-            AppBtn(text: LocaleKeys.login.tr()),
+            AppBtn(text: LocaleKeys.login.tr(),
+              onTap: ()async{
+              await login()
+              ;},),
 
             SizedBox(height: 20.h),
 
@@ -94,5 +115,20 @@ class LoginScreen extends StatelessWidget {
       ),
     );
   }
+
+
+login()async{
+    //first I take object dio with the constractor frome <<<package Dio>>>
+  //then  send a request ((((type post))));
+  //i store the response in the variable response
+  Dio dio =Dio();
+final response = await dio.post("https://codingarabic.online/api/login",
+data: {
+  "email":emailController.text,
+  "password":passwordController.text
+});
+debugPrint(response.data["data"]["user"]["name"]);
+
 }
-//todo iwant to put the safe area
+}
+//todo I want to put the safe area
