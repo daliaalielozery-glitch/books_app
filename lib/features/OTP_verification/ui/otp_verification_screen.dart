@@ -1,15 +1,11 @@
 import 'package:books_app/core/app_btn.dart';
-import 'package:books_app/core/app_text_field.dart';
 import 'package:books_app/core/arrow_back.dart';
 import 'package:books_app/core/theme/app_colors.dart';
 import 'package:books_app/features/Create_new_password/ui/create_new_password.dart';
 import 'package:books_app/features/OTP_verification/ui/widgets/otp_txt_field.dart';
-import 'package:books_app/features/auth/ui/login_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../gen/translations/local_keys.g.dart';
 
 class OtpVerificationScreen extends StatelessWidget {

@@ -1,7 +1,9 @@
+import 'package:books_app/core/helper/app_constants.dart';
 import 'package:books_app/features/Create_new_password/ui/create_new_password.dart';
 import 'package:books_app/features/OTP_verification/ui/otp_verification_screen.dart';
 import 'package:books_app/features/auth/ui/login_screen.dart';
 import 'package:books_app/features/auth/ui/register_screen.dart';
+import 'package:books_app/features/buttom_nav_bar/ui/buttom_nav_bar_screen.dart';
 import 'package:books_app/features/forget_password/ui/forget_password_screen.dart';
 import 'package:books_app/features/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +25,20 @@ class BookiaApp extends StatelessWidget {
         locale: context.locale,theme: ThemeData(fontFamily: "DM",scaffoldBackgroundColor: Colors.white
 
       ),
-        home: WelcomeScreen(),
+        home: startScreen(),
       ),
     );
   }
-}
+  Widget startScreen() {
+    final token = AppConstants.token;
+
+    if (token == null || token.isEmpty) {
+      return const WelcomeScreen();
+    } else {
+      return const ButtomNavBarScreen();
+    }
+  }
+    }
+
+
+
