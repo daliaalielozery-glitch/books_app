@@ -1,9 +1,11 @@
 import 'package:books_app/core/theme/app_colors.dart';
 import 'package:books_app/features/cart/ui/cart_screen.dart';
+import 'package:books_app/features/home/cubit/home_cubit.dart';
 import 'package:books_app/features/home/ui/home_screen.dart';
 import 'package:books_app/features/profile/ui/profile_screen.dart';
 import 'package:books_app/features/wish_list/ui/wish_list_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../gen/assets.gen.dart';
@@ -20,7 +22,10 @@ class _ButtomNavBarScreenState extends State<ButtomNavBarScreen> {
 
   List<Widget> screens =[
 
-    HomeScreen(),
+    BlocProvider(
+      create: (context) => HomeCubit()..getSlider(),
+      child: const HomeScreen(),
+    ),
   WishListScreen(),
   CartScreen(),
   ProfileScreen(),
