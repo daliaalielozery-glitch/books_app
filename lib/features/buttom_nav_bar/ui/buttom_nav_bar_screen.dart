@@ -1,8 +1,10 @@
 import 'package:books_app/core/theme/app_colors.dart';
-import 'package:books_app/features/auth/ui/login_screen.dart';
+import 'package:books_app/features/cart/ui/cart_screen.dart';
+import 'package:books_app/features/home/ui/home_screen.dart';
+import 'package:books_app/features/profile/ui/profile_screen.dart';
+import 'package:books_app/features/wish_list/ui/wish_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../gen/assets.gen.dart';
 
@@ -15,6 +17,16 @@ class ButtomNavBarScreen extends StatefulWidget {
 
 class _ButtomNavBarScreenState extends State<ButtomNavBarScreen> {
   int activeindex = 0;
+
+  List<Widget> screens =[
+
+    HomeScreen(),
+  WishListScreen(),
+  CartScreen(),
+  ProfileScreen(),
+
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,6 +78,10 @@ class _ButtomNavBarScreenState extends State<ButtomNavBarScreen> {
             label: "",
           ),
         ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: SafeArea(child: screens[activeindex]),
       ),
     );
   }
