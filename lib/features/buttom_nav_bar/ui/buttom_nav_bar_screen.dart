@@ -7,7 +7,6 @@ import 'package:books_app/features/wish_list/ui/wish_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import '../../../gen/assets.gen.dart';
 
 class ButtomNavBarScreen extends StatefulWidget {
@@ -23,7 +22,7 @@ class _ButtomNavBarScreenState extends State<ButtomNavBarScreen> {
   List<Widget> screens =[
 
     BlocProvider(
-      create: (context) => HomeCubit()..getSlider(),
+      create: (context) => HomeCubit()..getSlider()..getBestSeller(),
       child: const HomeScreen(),
     ),
   WishListScreen(),

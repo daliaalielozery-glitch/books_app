@@ -1,6 +1,6 @@
-import 'package:books_app/core/app_btn.dart';
-import 'package:books_app/core/app_text_field.dart';
-import 'package:books_app/core/arrow_back.dart';
+import 'package:books_app/core/widgets/app_btn.dart';
+import 'package:books_app/core/widgets/app_text_field.dart';
+import 'package:books_app/core/widgets/arrow_back.dart';
 import 'package:books_app/core/theme/app_colors.dart';
 import 'package:books_app/features/OTP_verification/ui/otp_verification_screen.dart';
 import 'package:books_app/features/auth/ui/login_screen.dart';

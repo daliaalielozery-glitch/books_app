@@ -1,13 +1,13 @@
 import 'package:books_app/core/networking/api_constants.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:pretty_dio_logger/src/pretty_dio_logger.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioHelper {
 
   static Dio? dio ;
 
- static init(){
+ static void init(){
     dio=Dio(BaseOptions(baseUrl: ApiConstants.baseUrl));
 
     dio?.interceptors.add(PrettyDioLogger(

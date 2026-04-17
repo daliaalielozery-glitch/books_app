@@ -7,10 +7,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/app_btn.dart';
-import '../../../core/app_text_field.dart';
+import '../../../core/widgets/app_btn.dart';
+import '../../../core/widgets/app_text_field.dart';
 import '../../../../gen/translations/local_keys.g.dart';
-import '../../../core/arrow_back.dart';
+import '../../../core/widgets/arrow_back.dart';
 import '../../../core/theme/app_colors.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
