@@ -1,6 +1,6 @@
-import 'package:books_app/core/app_btn.dart';
-import 'package:books_app/core/app_text_field.dart';
-import 'package:books_app/core/arrow_back.dart';
+import 'package:books_app/core/widgets/app_btn.dart';
+import 'package:books_app/core/widgets/app_text_field.dart';
+import 'package:books_app/core/widgets/arrow_back.dart';
 import 'package:books_app/core/theme/app_colors.dart';
 import 'package:books_app/features/password_changed/ui/password_changed_screen.dart';
 import 'package:easy_localization/easy_localization.dart';

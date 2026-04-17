@@ -1,4 +1,4 @@
-import 'package:books_app/core/app_btn.dart';
+import 'package:books_app/core/widgets/app_btn.dart';
 import 'package:books_app/features/auth/ui/login_screen.dart';
 import 'package:books_app/gen/translations/local_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';

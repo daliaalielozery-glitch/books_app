@@ -1,10 +1,5 @@
 import 'package:books_app/core/helper/app_constants.dart';
-import 'package:books_app/features/Create_new_password/ui/create_new_password.dart';
-import 'package:books_app/features/OTP_verification/ui/otp_verification_screen.dart';
-import 'package:books_app/features/auth/ui/login_screen.dart';
-import 'package:books_app/features/auth/ui/register_screen.dart';
 import 'package:books_app/features/buttom_nav_bar/ui/buttom_nav_bar_screen.dart';
-import 'package:books_app/features/forget_password/ui/forget_password_screen.dart';
 import 'package:books_app/features/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

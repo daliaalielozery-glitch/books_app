@@ -1,5 +1,5 @@
-import 'package:books_app/core/app_btn.dart';
-import 'package:books_app/core/arrow_back.dart';
+import 'package:books_app/core/widgets/app_btn.dart';
+import 'package:books_app/core/widgets/arrow_back.dart';
 import 'package:books_app/core/theme/app_colors.dart';
 import 'package:books_app/features/Create_new_password/ui/create_new_password.dart';
 import 'package:books_app/features/OTP_verification/ui/widgets/otp_txt_field.dart';

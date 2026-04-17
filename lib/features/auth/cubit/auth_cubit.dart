@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:books_app/features/auth/data/repo/auth_repo.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/material.dart';
 
 part 'auth_state.dart';
 
